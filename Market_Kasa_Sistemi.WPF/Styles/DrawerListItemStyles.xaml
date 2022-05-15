@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:controls="clr-namespace:Market_Kasa_Sistemi.WPF.Controls">
+    <Style TargetType="{x:Type controls:DrawerListItem}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColor}"/>
+        <Setter Property="Padding" Value="0 8" />
+        <Setter Property="Icon" Value="User" />
+        <Setter Property="Text" Value="Text" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:DrawerListItem}">
+                    <Border Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="32 0">
+                            <materialDesign:PackIcon Kind="{TemplateBinding Icon}"
+                                                     Foreground="{DynamicResource OnPrimaryColor}"
+                                                     Width="48"
+                                                     Height="48"
+                                                     Margin="0 0 32 0"/>
+                            <TextBlock Text="{TemplateBinding Text}"
+                                       VerticalAlignment="Center"
+                                       Foreground="{DynamicResource OnPrimaryColor}"
+                                       FontWeight="Bold"
+                                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource PrimaryHoverColor}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource PrimaryFocusedColor}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

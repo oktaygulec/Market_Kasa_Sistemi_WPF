@@ -1,0 +1,53 @@
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CopyComplete
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\Miyajinco\Desktop\Development\CSharp\YedekProje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.AssemblyReference.cache
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CopyComplete
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\hyuna\Desktop\Solutions\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CopyComplete
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\Miyajinco\Desktop\Development\CSharp\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\PC\source\repos\oktaygulec\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.AssemblyReference.cache
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CopyComplete
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.csproj.CopyComplete
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.DatabaseAccessLayer\obj\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb

@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="Primary">#A6C7D9</Color>
+    <Color x:Key="PrimaryHover">#88AFC4</Color>
+    <Color x:Key="PrimaryFocused">#709CB3</Color>
+    <Color x:Key="Background">#212121</Color>
+    <Color x:Key="Surface">#424242</Color>
+    <Color x:Key="OnSurface">#EEEEEE</Color>
+    <Color x:Key="Text">#EEEEEE</Color>
+    <Color x:Key="Error">#B00020</Color>
+    <Color x:Key="Success">#066253</Color>
+
+    <SolidColorBrush x:Key="PrimaryColor" Color="{StaticResource Primary}" />
+    <SolidColorBrush x:Key="PrimaryHoverColor" Color="{StaticResource PrimaryHover}" />
+    <SolidColorBrush x:Key="PrimaryFocusedColor" Color="{StaticResource PrimaryFocused}" />
+    <SolidColorBrush x:Key="BackgroundColor" Color="{StaticResource Background}" />
+    <SolidColorBrush x:Key="SurfaceColor" Color="{StaticResource Surface}" />
+    <SolidColorBrush x:Key="TextColor" Color="{StaticResource Text}" />
+
+    <SolidColorBrush x:Key="OnPrimaryColor" Color="{StaticResource Background}" />
+    <SolidColorBrush x:Key="OnBackgroundColor" Color="{StaticResource Primary}" />
+    <SolidColorBrush x:Key="OnSurfaceColor" Color="{StaticResource OnSurface}" />
+    <SolidColorBrush x:Key="OnErrorColor" Color="{StaticResource Text}" />
+    <SolidColorBrush x:Key="OnSuccessColor" Color="{StaticResource Text}" />
+</ResourceDictionary>

@@ -1,0 +1,154 @@
+﻿<Window x:Class="Market_Kasa_Sistemi.WPF.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:controls="clr-namespace:Market_Kasa_Sistemi.WPF.Controls"
+        xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF"
+        mc:Ignorable="d"
+        x:Name="mainWindow"
+        Title="MainWindow"
+        Width="1920"
+        Height="1080"
+        WindowState="Maximized"
+        FontFamily="Roboto">
+    <materialDesign:DialogHost>
+        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=DrawerToggleButton, Path=IsChecked}">
+            <!-- Drawer -->
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <Grid Background="{DynamicResource PrimaryColor}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Margin="0 16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <ToggleButton x:Name="ThemeModeToggle"
+                                      Cursor="Hand"
+                                      HorizontalAlignment="Left" 
+                                      Style="{StaticResource MaterialDesignActionToggleButton}"
+                                      Background="{DynamicResource OnPrimaryColor}"
+                                      Foreground="{DynamicResource PrimaryColor}"
+                                      Margin="16 0"
+                                      IsChecked="False"
+                                      Content="{materialDesign:PackIcon Kind=WeatherNight}"
+                                      materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=WeatherSunny}"
+                                      Click="ThemeModeToggle_Click">
+                        </ToggleButton>
+
+                        <ToggleButton HorizontalAlignment="Right"
+                                      Cursor="Hand"
+                                      Grid.Column="1"
+                                      Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                                      Foreground="{DynamicResource OnPrimaryColor}"
+                                      Margin="16 0"
+                                      IsChecked="{Binding ElementName=DrawerToggleButton, Path=IsChecked, Mode=TwoWay}"/>
+                    </Grid>
+
+                    <StackPanel Margin="0 36"
+                                Grid.Row="1">
+                        <TextBlock Text="SAMET ÖZTÜRK"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnPrimaryColor}"
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="Yönetici"
+                                   Margin="0 8"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnPrimaryColor}"
+                                   Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                    <ListView x:Name="lstDrawer"
+                              ItemContainerStyle="{StaticResource {x:Type controls:DrawerListItem}}"
+                              SelectedItem="{Binding SelectedItem}"
+                              PreviewMouseLeftButtonUp="lstDrawer_PreviewMouseLeftButtonUp"
+                              Grid.Row="2">
+
+                    </ListView>
+                    <Button Grid.Row="3"
+                            Height="72"
+                            VerticalAlignment="Center"
+                            x:Name="btnLogout"
+                            Click="btnLogout_Click">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Logout" 
+                                                     Margin="0 0 8 0"
+                                                     VerticalAlignment="Center"
+                                                     Width="48"
+                                                     Height="48"
+                                                     Foreground="{DynamicResource OnPrimaryColor}"/>
+                            <TextBlock Text="ÇIKIŞ YAP" 
+                                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource OnPrimaryColor}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+            <!-- End Drawer -->
+
+            <!-- Main Content -->
+            <StackPanel Background="{DynamicResource BackgroundColor}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone Background="{DynamicResource OnPrimaryColor}"
+                                              Foreground="{DynamicResource PrimaryColor}"  
+                                              Padding="32">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton x:Name="DrawerToggleButton"
+                                          HorizontalAlignment="Left"
+                                          Cursor="Hand"
+                                          Height="48"
+                                          Width="48"
+                                          IsChecked="False"
+                                          Click="DrawerToggleButton_Click"
+                                          Foreground="{DynamicResource PrimaryColor}"
+                                          Style="{StaticResource MaterialDesignHamburgerToggleButton}"/>
+                            <TextBlock VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Grid.Column="1"
+                                       Text="{Binding SelectedItem.Text}"
+                                       FontWeight="Bold"
+                                       Style="{StaticResource MaterialDesignHeadline3TextBlock}"/>
+                            <Button Style="{StaticResource MaterialDesignIconButton}"
+                                    Grid.Column="2"
+                                    Cursor="Hand"
+                                    Height="48"
+                                    Width="48"
+                                    x:Name="btnExit"
+                                    Click="btnExit_Click">
+                                <materialDesign:PackIcon Kind="Close" 
+                                                         Width="48"
+                                                         Height="48"/>
+                            </Button>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <!-- View -->
+                    <Frame Grid.Row="1" 
+                           Source="{Binding SelectedItem.Source}"
+                           NavigationUIVisibility="Hidden"/>
+                    <!-- End View -->
+                </Grid>
+            </StackPanel>
+            <!-- End Content -->
+        </materialDesign:DrawerHost>
+    </materialDesign:DialogHost>
+</Window>
