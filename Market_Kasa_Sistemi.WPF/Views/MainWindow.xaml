@@ -9,8 +9,6 @@
         mc:Ignorable="d"
         x:Name="mainWindow"
         Title="MainWindow"
-        Width="1920"
-        Height="1080"
         WindowState="Maximized"
         FontFamily="Roboto">
     <materialDesign:DialogHost>
@@ -53,12 +51,12 @@
 
                     <StackPanel Margin="0 36"
                                 Grid.Row="1">
-                        <TextBlock Text="SAMET ÖZTÜRK"
+                        <TextBlock Text="{Binding Kullanici.Personel.PersonelAdSoyad}"
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource OnPrimaryColor}"
                                    Style="{StaticResource MaterialDesignHeadline5TextBlock}"
                                    HorizontalAlignment="Center"/>
-                        <TextBlock Text="Yönetici"
+                        <TextBlock Text="{Binding Kullanici.Personel.PersonelTipAd}"
                                    Margin="0 8"
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource OnPrimaryColor}"
@@ -73,11 +71,13 @@
                               Grid.Row="2">
 
                     </ListView>
-                    <Button Grid.Row="3"
-                            Height="72"
-                            VerticalAlignment="Center"
-                            x:Name="btnLogout"
-                            Click="btnLogout_Click">
+                    <controls:CustomButton Grid.Row="3"
+                                           Height="72"
+                                           HoverColor="{DynamicResource PrimaryHoverColor}"
+                                           FocusedColor="{DynamicResource PrimaryFocusedColor}"
+                                           VerticalAlignment="Center"
+                                           x:Name="btnLogout"
+                                           Click="btnLogout_Click">
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
                             <materialDesign:PackIcon Kind="Logout" 
@@ -92,7 +92,7 @@
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource OnPrimaryColor}"/>
                         </StackPanel>
-                    </Button>
+                    </controls:CustomButton>
                 </Grid>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <!-- End Drawer -->
@@ -144,7 +144,8 @@
                     <!-- View -->
                     <Frame Grid.Row="1" 
                            Source="{Binding SelectedItem.Source}"
-                           NavigationUIVisibility="Hidden"/>
+                           NavigationUIVisibility="Hidden"
+                           Margin="32"/>
                     <!-- End View -->
                 </Grid>
             </StackPanel>

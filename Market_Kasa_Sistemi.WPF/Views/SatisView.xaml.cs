@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Market_Kasa_Sistemi.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Market_Kasa_Sistemi.WPF.Views
         public SatisView()
         {
             InitializeComponent();
+            DataContext = new SatisViewModel();
+            dataGridSatislar.Height = Application.Current.MainWindow.ActualHeight - 400;
         }
     }
 }

@@ -5,10 +5,13 @@
     <Color x:Key="PrimaryFocused">#709CB3</Color>
     <Color x:Key="Background">#212121</Color>
     <Color x:Key="Surface">#424242</Color>
-    <Color x:Key="OnSurface">#EEEEEE</Color>
     <Color x:Key="Text">#EEEEEE</Color>
     <Color x:Key="Error">#B00020</Color>
+    <Color x:Key="ErrorHover">#cc1d33</Color>
+    <Color x:Key="ErrorFocused">#de2839</Color>
     <Color x:Key="Success">#066253</Color>
+    <Color x:Key="SuccessHover">#087261</Color>
+    <Color x:Key="SuccessFocused">#0a8270</Color>
 
     <SolidColorBrush x:Key="PrimaryColor" Color="{StaticResource Primary}" />
     <SolidColorBrush x:Key="PrimaryHoverColor" Color="{StaticResource PrimaryHover}" />
@@ -16,10 +19,16 @@
     <SolidColorBrush x:Key="BackgroundColor" Color="{StaticResource Background}" />
     <SolidColorBrush x:Key="SurfaceColor" Color="{StaticResource Surface}" />
     <SolidColorBrush x:Key="TextColor" Color="{StaticResource Text}" />
+    <SolidColorBrush x:Key="ErrorColor" Color="{StaticResource Error}" />
+    <SolidColorBrush x:Key="ErrorHoverColor" Color="{StaticResource ErrorHover}" />
+    <SolidColorBrush x:Key="ErrorFocusedColor" Color="{StaticResource ErrorFocused}" />
+    <SolidColorBrush x:Key="SuccessColor" Color="{StaticResource Success}" />
+    <SolidColorBrush x:Key="SuccessHoverColor" Color="{StaticResource SuccessHover}" />
+    <SolidColorBrush x:Key="SuccessFocusedColor" Color="{StaticResource SuccessFocused}" />
 
     <SolidColorBrush x:Key="OnPrimaryColor" Color="{StaticResource Background}" />
     <SolidColorBrush x:Key="OnBackgroundColor" Color="{StaticResource Primary}" />
-    <SolidColorBrush x:Key="OnSurfaceColor" Color="{StaticResource OnSurface}" />
+    <SolidColorBrush x:Key="OnSurfaceColor" Color="{StaticResource Text}" />
     <SolidColorBrush x:Key="OnErrorColor" Color="{StaticResource Text}" />
     <SolidColorBrush x:Key="OnSuccessColor" Color="{StaticResource Text}" />
 </ResourceDictionary>

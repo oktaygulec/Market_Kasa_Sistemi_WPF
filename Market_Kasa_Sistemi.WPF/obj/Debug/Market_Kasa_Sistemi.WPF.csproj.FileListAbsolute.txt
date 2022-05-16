@@ -34,4 +34,11 @@ C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\Gors
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\obj\Debug\Views\SatisView.baml
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\obj\Debug\Views\YoneticiView.baml
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\obj\Debug\Views\ZRaporuView.baml
-C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\obj\Debug\Styles\CustomButton.baml
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.dll
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\bin\Debug\Market_Kasa_Sistemi.DatabaseAccessLayer.pdb
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\bin\Debug\MarketDB.mdf
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\bin\Debug\MarketDB_log.ldf
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\obj\Debug\Market_Kasa_Sistemi.WPF_Content.g.cs
+C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\obj\Debug\Styles\CustomButtonStyles.baml
