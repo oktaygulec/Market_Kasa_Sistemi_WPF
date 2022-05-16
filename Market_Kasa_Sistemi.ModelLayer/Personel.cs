@@ -10,6 +10,7 @@ namespace Market_Kasa_Sistemi.Models
         public int Id { get; set; }
         public string PersonelAd { get; set; }
         public string PersonelSoyad { get; set; }
+        public string PersonelAdSoyad { get => PersonelAd + " " + PersonelSoyad; }
         public DateTime PersonelBaslangicTarih { get; set; }
         [Browsable(false)]
         public PersonelTip PersonelTip { get; set; }

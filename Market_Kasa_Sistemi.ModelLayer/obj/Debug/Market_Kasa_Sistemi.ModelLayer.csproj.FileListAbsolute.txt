@@ -30,7 +30,6 @@ C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.Model
 C:\Users\hyuna\Desktop\Solution\GorselProgramlamaProje\Market_Kasa_Sistemi.ModelLayer\obj\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.ModelLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.dll
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.ModelLayer\bin\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
-C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.ModelLayer\obj\Debug\Market_Kasa_Sistemi.ModelLayer.csproj.AssemblyReference.cache
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.ModelLayer\obj\Debug\Market_Kasa_Sistemi.ModelLayer.csproj.CoreCompileInputs.cache
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.ModelLayer\obj\Debug\Market_Kasa_Sistemi.ModelLayer.dll
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.ModelLayer\obj\Debug\Market_Kasa_Sistemi.ModelLayer.pdb
