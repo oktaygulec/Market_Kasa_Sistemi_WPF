@@ -8,8 +8,10 @@
       xmlns:controls="clr-namespace:Market_Kasa_Sistemi.WPF.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      x:Name="satisView"
       Title="SatisView"
-      FontFamily="Roboto">
+      FontFamily="Roboto"
+      Language="tr-TR">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,16 +25,16 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <controls:CustomButton Background="{DynamicResource ErrorColor}"
-                                   HoverColor="{DynamicResource ErrorHoverColor}"
-                                   FocusedColor="{DynamicResource ErrorFocusedColor}"
+            <controls:CustomButton Background="{DynamicResource PrimaryColor}"
+                                   HoverColor="{DynamicResource PrimaryHoverColor}"
+                                   FocusedColor="{DynamicResource PrimaryFocusedColor}"
                                    Padding="32 16"
                                    CornerRadius="6">
-                <TextBlock Text="ÜRÜN SİL"
+                <TextBlock Text="ÜRÜN SEÇ"
                            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
                            VerticalAlignment="Center"
                            FontWeight="Bold"
-                           Foreground="{DynamicResource OnErrorColor}"/>
+                           Foreground="{DynamicResource OnPrimaryColor}"/>
             </controls:CustomButton>
             <TextBox Grid.Column="2"
                      Width="200"
@@ -93,7 +95,7 @@
                                    Foreground="{DynamicResource OnBackgroundColor}"/>
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
-                <DataGridTextColumn Binding="{Binding UrunFiyat}"
+                <DataGridTextColumn Binding="{Binding UrunFiyat, StringFormat=C2}"
                                     ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                     IsReadOnly="True"
@@ -105,11 +107,70 @@
                                    Foreground="{DynamicResource OnBackgroundColor}"/>
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
+                <DataGridTemplateColumn IsReadOnly="True"
+                                        Width="auto">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="İŞLEMLER" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <controls:CustomButton Command="{Binding Path=DataContext.IncreaseCommand, Source={x:Reference satisView}}" 
+                                                       CommandParameter="{Binding .}"
+                                                       Margin="8 0"
+                                                       Padding="16"
+                                                       Background="{DynamicResource SecondaryColor}"
+                                                       HoverColor="{DynamicResource SecondaryHoverColor}"
+                                                       FocusedColor="{DynamicResource SecondaryFocusedColor}">
+                                    <materialDesign:PackIcon Kind="Plus" 
+                                                             Foreground="{DynamicResource OnSecondaryColor}"
+                                                             Width="24"
+                                                             Height="24"/>
+                                </controls:CustomButton>
+                                <controls:CustomButton Command="{Binding Path=DataContext.DecreaseCommand, Source={x:Reference satisView}}" 
+                                                       CommandParameter="{Binding .}"
+                                                       Margin="8 0"
+                                                       Padding="16"
+                                                       Background="{DynamicResource SecondaryColor}"
+                                                       HoverColor="{DynamicResource SecondaryHoverColor}"
+                                                       FocusedColor="{DynamicResource SecondaryFocusedColor}">
+                                    <materialDesign:PackIcon Kind="Minus" 
+                                                             Foreground="{DynamicResource OnSecondaryColor}"
+                                                             Width="24"
+                                                             Height="24"/>
+                                </controls:CustomButton>
+                                <controls:CustomButton Command="{Binding Path=DataContext.DeleteCommand, Source={x:Reference satisView}}" 
+                                                       CommandParameter="{Binding .}"
+                                                       Margin="8 0"
+                                                       Padding="16"
+                                                       Background="{DynamicResource ErrorColor}"
+                                                       HoverColor="{DynamicResource ErrorHoverColor}"
+                                                       FocusedColor="{DynamicResource ErrorFocusedColor}">
+                                    <materialDesign:PackIcon Kind="Trash" 
+                                                             Foreground="{DynamicResource OnErrorColor}"
+                                                             Width="24"
+                                                             Height="24"/>
+                                </controls:CustomButton>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal">
-            <Button Content="BUTTON 1" />
+            <TextBlock Text="Toplam Tutar:" 
+                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                       Foreground="{DynamicResource OnBackgroundColor}"
+                       Margin="0 0 8 0"/>
+            <TextBlock Text="{Binding ToplamTutar, StringFormat=C2}" 
+                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                       Foreground="{DynamicResource OnBackgroundColor}"
+                       FontWeight="Bold"/>
+            <Button Content="BUTTON 1"/>
             <Button Content="BUTTON 2" />
         </StackPanel>
     </Grid>

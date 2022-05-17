@@ -10,7 +10,8 @@
         x:Name="mainWindow"
         Title="MainWindow"
         WindowState="Maximized"
-        FontFamily="Roboto">
+        FontFamily="Roboto"
+        Language="tr-TR">
     <materialDesign:DialogHost>
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=DrawerToggleButton, Path=IsChecked}">
             <!-- Drawer -->

@@ -24,7 +24,10 @@ namespace Market_Kasa_Sistemi.WPF.Views
     {
         private readonly ResourceDictionary lightModeDictionary = new ResourceDictionary { Source = new Uri("/Themes/Colors/LightThemeColors.xaml", UriKind.Relative) };
         private readonly ResourceDictionary darkModeDictionary = new ResourceDictionary { Source = new Uri("/Themes/Colors/DarkThemeColors.xaml", UriKind.Relative) };
-        
+
+        private readonly ResourceDictionary lightMaterialDictionary = new ResourceDictionary { Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml", UriKind.Absolute) };
+        private readonly ResourceDictionary darkMaterialDictionary = new ResourceDictionary { Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml", UriKind.Absolute) };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -45,12 +48,17 @@ namespace Market_Kasa_Sistemi.WPF.Views
             if (ThemeModeToggle.IsChecked == true)
             {
                 Application.Current.Resources.MergedDictionaries.Remove(lightModeDictionary);
+                Application.Current.Resources.MergedDictionaries.Remove(lightMaterialDictionary);
                 Application.Current.Resources.MergedDictionaries.Add(darkModeDictionary);
+                Application.Current.Resources.MergedDictionaries.Add(darkMaterialDictionary);
+
             }
             else if (ThemeModeToggle.IsChecked == false)
             {
                 Application.Current.Resources.MergedDictionaries.Remove(darkModeDictionary);
+                Application.Current.Resources.MergedDictionaries.Remove(darkMaterialDictionary);
                 Application.Current.Resources.MergedDictionaries.Add(lightModeDictionary);
+                Application.Current.Resources.MergedDictionaries.Add(lightMaterialDictionary);
             }
         }
 

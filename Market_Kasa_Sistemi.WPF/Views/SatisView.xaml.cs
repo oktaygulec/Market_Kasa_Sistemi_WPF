@@ -1,4 +1,5 @@
-﻿using Market_Kasa_Sistemi.WPF.ViewModels;
+﻿using Market_Kasa_Sistemi.Models;
+using Market_Kasa_Sistemi.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

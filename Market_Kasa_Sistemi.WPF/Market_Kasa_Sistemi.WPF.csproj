@@ -79,6 +79,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controls\CustomButton.cs" />
+    <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\SatisUrunViewModel.cs" />
     <Compile Include="ViewModels\SatisViewModel.cs" />
     <Compile Include="Views\BarkodOkuView.xaml.cs">
       <DependentUpon>BarkodOkuView.xaml</DependentUpon>
