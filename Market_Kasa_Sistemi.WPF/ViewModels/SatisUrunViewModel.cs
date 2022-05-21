@@ -10,92 +10,30 @@ namespace Market_Kasa_Sistemi.WPF.ViewModels
 {
     public class SatisUrunViewModel : ViewModelBase
     {
-        private Urun _urun;
-        public Urun Urun { get => _urun; }
+        private Satis _satis;
+        public Satis Satis { get => _satis; }
 
-        public int Id 
-        {
-            get => _urun.Id;
-            set 
-            {
-                if(_urun.Id != value)
-                {
-                    _urun.Id = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        public decimal ToplamFiyat { get => _satis.ToplamKdvliFiyat; }
 
-        public string UrunAd
+        public int UrunAdet
         {
-            get => _urun.UrunAd;
+            get => _satis.SatisAdet;
             set
             {
-                if (_urun.UrunAd != value)
+                if (_satis.SatisAdet != value)
                 {
-                    _urun.UrunAd = value;
+                    _satis.SatisAdet = value;
                     OnPropertyChanged();
+                    OnPropertyChanged("ToplamFiyat");
                 }
             }
         }
 
-        public decimal UrunFiyat
-        {
-            get => _urun.UrunFiyat;
-            set
-            {
-                if (_urun.UrunFiyat != value)
-                {
-                    _urun.UrunFiyat = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        public SatisUrunViewModel() : this(new Satis()){}
 
-        public int UrunStokAdet
+        public SatisUrunViewModel(Satis satis)
         {
-            get => _urun.UrunStokAdet;
-            set
-            {
-                if (_urun.UrunStokAdet != value)
-                {
-                    _urun.UrunStokAdet = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public Kategori Kategori
-        {
-            get => _urun.Kategori;
-            set
-            {
-                if (_urun.Kategori != value)
-                {
-                    _urun.Kategori = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public Vergi Vergi
-        {
-            get => _urun.Vergi;
-            set
-            {
-                if (_urun.Vergi != value)
-                {
-                    _urun.Vergi = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public SatisUrunViewModel() : this(new Urun()){}
-
-        public SatisUrunViewModel(Urun urun)
-        {
-            this._urun = urun;
+            this._satis = satis;
         }
     }
 }

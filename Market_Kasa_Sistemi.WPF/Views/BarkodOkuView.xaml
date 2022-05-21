@@ -3,13 +3,39 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="BarkodOkuView">
+      Title="Barkod Oku"
+      FontFamily="Roboto"
+      Language="tr-TR">
 
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Center">
-        <TextBlock Text="BARKOD OKU" FontSize="48"/>
+        <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                 Background="{DynamicResource SurfaceColor}"
+                 Foreground="{DynamicResource OnSurfaceColor}"
+                 BorderBrush="{DynamicResource BorderColor}"
+                 materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
+                 materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
+                 VerticalAlignment="Center"
+                 Width="500"
+                 FontSize="20"
+                 x:Name="barkodTxt"
+                 KeyUp="barkodTxt_KeyUp">
+            <materialDesign:HintAssist.Hint>
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Search" 
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             Margin="0 0 8 0"/>
+                    <TextBlock Text="Barkod giriniz..." 
+                               Style="{StaticResource MaterialDesignBody1TextBlock}"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </materialDesign:HintAssist.Hint>
+        </TextBox>
     </StackPanel>
 </Page>

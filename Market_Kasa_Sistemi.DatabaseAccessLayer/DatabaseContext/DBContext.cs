@@ -1,8 +1,10 @@
 ﻿using Market_Kasa_Sistemi.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Market_Kasa_Sistemi.DatabaseAccessLayer.DatabaseContext
 {
@@ -15,12 +17,14 @@ namespace Market_Kasa_Sistemi.DatabaseAccessLayer.DatabaseContext
             Connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MarketDB.mdf;Integrated Security=True");
         }
 
-        public void OpenConnection()
+        public async Task OpenConnection()
         {
             try
             {
                 if (Connection.State == ConnectionState.Closed)
-                    Connection.Open();
+                {
+                    await Connection.OpenAsync();
+                }
             }
             catch (Exception e)
             {
@@ -73,32 +77,32 @@ namespace Market_Kasa_Sistemi.DatabaseAccessLayer.DatabaseContext
             return cmd;
         }
 
-        public object ExecuteScalar(SqlCommand cmd)
+        public async Task<object> ExecuteScalar(SqlCommand cmd)
         {
-            OpenConnection();
-            object id = cmd.ExecuteScalar();
+            await OpenConnection();
+            object id = await cmd.ExecuteScalarAsync();
             CloseConnection();
 
             return id;
         }
 
-        public int ExecuteNonQuery(SqlCommand cmd)
+        public async Task<int> ExecuteNonQuery(SqlCommand cmd)
         {
-            OpenConnection();
-            int executedRows = cmd.ExecuteNonQuery();
+            await OpenConnection();
+            int executedRows = await cmd.ExecuteNonQueryAsync();
             CloseConnection();
 
             return executedRows;
         }
 
-        public T GetItem<T> (SqlCommand cmd) where T : IModel
+        public async Task<T> GetItem<T> (SqlCommand cmd) where T : IModel
         {
             T item = Activator.CreateInstance<T>();
             
-            OpenConnection();
-            SqlDataReader reader = cmd.ExecuteReader();
+            await OpenConnection();
+            SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
-            if (reader.HasRows && reader.Read())
+            if (reader.HasRows && await reader.ReadAsync())
             {
                 item.ReadItem(reader);
             }
@@ -107,14 +111,36 @@ namespace Market_Kasa_Sistemi.DatabaseAccessLayer.DatabaseContext
             return item;
         }
 
-        public List<T> ToList<T>(SqlCommand cmd) where T : IModel
+        public async Task<List<T>> ToList<T>(SqlCommand cmd) where T : IModel
         {
             List<T> items = new List<T>();
 
-            OpenConnection();
-            SqlDataReader reader = cmd.ExecuteReader();
+            await OpenConnection ();
+            SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
-            while(reader.Read())
+            while(await reader.ReadAsync())
+            {
+                T item = Activator.CreateInstance<T>();
+
+                if (reader.HasRows)
+                {
+                    item.ReadItem(reader);
+                    items.Add(item);
+                }
+            }
+
+            CloseConnection();
+            return items;
+        }
+
+        public async Task<ObservableCollection<T>> ToObservableCollection<T>(SqlCommand cmd) where T : IModel
+        {
+            ObservableCollection<T> items = new ObservableCollection<T>();
+
+            await OpenConnection ();
+            SqlDataReader reader = await cmd.ExecuteReaderAsync();
+
+            while (await reader.ReadAsync())
             {
                 T item = Activator.CreateInstance<T>();
 

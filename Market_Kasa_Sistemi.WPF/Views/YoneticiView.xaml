@@ -3,13 +3,69 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Views"
+      xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Views" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="YoneticiView">
+      Title="Yönetici"
+      FontFamily="Roboto"
+      Language="tr-TR">
 
-    <StackPanel HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-        <TextBlock Text="YÖNETİCİ" FontSize="48"/>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <materialDesign:Card Background="{DynamicResource SurfaceColor}">
+            <TabControl HorizontalContentAlignment="Center"
+                        materialDesign:ColorZoneAssist.Background="{DynamicResource BackgroundColor}"
+                        materialDesign:ColorZoneAssist.Foreground="{DynamicResource SecondaryColor}"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                        materialDesign:ColorZoneAssist.Mode="Custom">
+                <TabItem Height="75">
+                    <TabItem.Header>
+                        <TextBlock Text="KULLANICILAR" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource SecondaryColor}"/>
+                    </TabItem.Header>
+                    <Frame Source="/Views/YoneticiContent/KullanicilarView.xaml" 
+                           NavigationUIVisibility="Hidden"
+                           Padding="16"/>
+                </TabItem>
+                <TabItem Height="75">
+                    <TabItem.Header>
+                        <TextBlock Text="PERSONELLER" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource SecondaryColor}"/>
+                    </TabItem.Header>
+                    <Frame Source="/Views/YoneticiContent/PersonellerView.xaml" 
+                           NavigationUIVisibility="Hidden"
+                           Padding="16"/>
+                </TabItem>
+                <TabItem Height="75">
+                    <TabItem.Header>
+                        <TextBlock Text="ÜRÜNLER" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource SecondaryColor}"/>
+                    </TabItem.Header>
+                    <Frame Source="/Views/YoneticiContent/UrunlerView.xaml" 
+                           NavigationUIVisibility="Hidden"
+                           Padding="16"/>
+                </TabItem>
+                <TabItem Height="75">
+                    <TabItem.Header>
+                        <TextBlock Text="KATEGORİLER" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource SecondaryColor}"/>
+                    </TabItem.Header>
+                    <Frame Source="/Views/YoneticiContent/KategorilerView.xaml" 
+                           NavigationUIVisibility="Hidden"
+                           Padding="16"/>
+                </TabItem>
+            </TabControl>
+        </materialDesign:Card>
+    </Grid>
 </Page>

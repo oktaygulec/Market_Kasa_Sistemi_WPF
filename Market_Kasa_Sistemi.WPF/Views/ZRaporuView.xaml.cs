@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Market_Kasa_Sistemi.ModelLayer;
+using Market_Kasa_Sistemi.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,17 @@ namespace Market_Kasa_Sistemi.WPF.Views
         public ZRaporuView()
         {
             InitializeComponent();
+            DataContext = new ZRaporuViewModel();
+            dataGridFisler.Height = Application.Current.MainWindow.ActualHeight - 340;
+        }
+
+        private async void zRaporuView_Loaded(object sender, RoutedEventArgs e)
+        {
+            spinner.Visibility = Visibility.Visible;
+            dataGridFisler.Visibility = Visibility.Hidden;
+            await(DataContext as ZRaporuViewModel).GetDatas();
+            spinner.Visibility = Visibility.Hidden;
+            dataGridFisler.Visibility = Visibility.Visible;
         }
     }
 }

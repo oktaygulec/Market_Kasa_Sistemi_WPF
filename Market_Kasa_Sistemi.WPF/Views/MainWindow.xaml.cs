@@ -22,8 +22,8 @@ namespace Market_Kasa_Sistemi.WPF.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly ResourceDictionary lightModeDictionary = new ResourceDictionary { Source = new Uri("/Themes/Colors/LightThemeColors.xaml", UriKind.Relative) };
-        private readonly ResourceDictionary darkModeDictionary = new ResourceDictionary { Source = new Uri("/Themes/Colors/DarkThemeColors.xaml", UriKind.Relative) };
+        private readonly ResourceDictionary lightModeDictionary = new ResourceDictionary { Source = new Uri("/Resources/Themes/Colors/LightThemeColors.xaml", UriKind.Relative) };
+        private readonly ResourceDictionary darkModeDictionary = new ResourceDictionary { Source = new Uri("/Resources/Themes/Colors/DarkThemeColors.xaml", UriKind.Relative) };
 
         private readonly ResourceDictionary lightMaterialDictionary = new ResourceDictionary { Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml", UriKind.Absolute) };
         private readonly ResourceDictionary darkMaterialDictionary = new ResourceDictionary { Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml", UriKind.Absolute) };
@@ -75,7 +75,11 @@ namespace Market_Kasa_Sistemi.WPF.Views
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-
+            App.Kullanici = null;
+            Window oldWindow = Application.Current.MainWindow;
+            Application.Current.MainWindow = new UserWindow(Enums.UserWindowType.Login);
+            Application.Current.MainWindow.Show();
+            oldWindow.Close();
         }
     }
 }

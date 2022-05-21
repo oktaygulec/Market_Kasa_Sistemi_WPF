@@ -79,11 +79,48 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controls\CustomButton.cs" />
+    <Compile Include="Controls\Dialogs\DeleteItemDialog.xaml.cs">
+      <DependentUpon>DeleteItemDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\KategoriDialog.xaml.cs">
+      <DependentUpon>KategoriDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\KullaniciDialog.xaml.cs">
+      <DependentUpon>KullaniciDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\PersonelDialog.xaml.cs">
+      <DependentUpon>PersonelDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\UrunDialog.xaml.cs">
+      <DependentUpon>UrunDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ItemsCountToBoolConverter.cs" />
+    <Compile Include="Helpers\BindingProxy.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="ValidationRules\HasAmountValidationRule.cs" />
+    <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\DialogVMs\DeleteItemDialogViewModel.cs" />
+    <Compile Include="ViewModels\DialogVMs\InformationDialogViewModel.cs" />
+    <Compile Include="ViewModels\DialogVMs\KategoriDialogViewModel.cs" />
+    <Compile Include="ViewModels\DialogVMs\KullaniciDialogViewModel.cs" />
+    <Compile Include="ViewModels\DialogVMs\PersonelDialogViewModel.cs" />
+    <Compile Include="ViewModels\DialogVMs\UrunDialogViewModel.cs" />
+    <Compile Include="ViewModels\IadeViewModel.cs" />
     <Compile Include="ViewModels\SatisUrunViewModel.cs" />
     <Compile Include="ViewModels\SatisViewModel.cs" />
+    <Compile Include="ViewModels\UserVMs\LoginViewModel.cs" />
+    <Compile Include="ViewModels\UserVMs\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\YoneticiVMs\KategorilerViewModel.cs" />
+    <Compile Include="ViewModels\YoneticiVMs\KullanicilarViewModel.cs" />
+    <Compile Include="ViewModels\YoneticiVMs\PersonellerViewModel.cs" />
+    <Compile Include="ViewModels\YoneticiVMs\UrunlerViewModel.cs" />
+    <Compile Include="ViewModels\ZRaporuViewModel.cs" />
     <Compile Include="Views\BarkodOkuView.xaml.cs">
       <DependentUpon>BarkodOkuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\InformationDialog.xaml.cs">
+      <DependentUpon>InformationDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\IadeView.xaml.cs">
       <DependentUpon>IadeView.xaml</DependentUpon>
@@ -91,17 +128,62 @@
     <Compile Include="Views\SatisView.xaml.cs">
       <DependentUpon>SatisView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserViews\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserViews\RegisterView.xaml.cs">
+      <DependentUpon>RegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YoneticiContent\KategorilerView.xaml.cs">
+      <DependentUpon>KategorilerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YoneticiContent\KullanicilarView.xaml.cs">
+      <DependentUpon>KullanicilarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YoneticiContent\PersonellerView.xaml.cs">
+      <DependentUpon>PersonellerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YoneticiContent\UrunlerView.xaml.cs">
+      <DependentUpon>UrunlerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\YoneticiView.xaml.cs">
       <DependentUpon>YoneticiView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ZRaporuView.xaml.cs">
       <DependentUpon>ZRaporuView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Styles\CustomButtonStyles.xaml">
+    <Page Include="Controls\Dialogs\DeleteItemDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialogs\KategoriDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialogs\KullaniciDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialogs\PersonelDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialogs\UrunDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\CustomButtonStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BarkodOkuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialogs\InformationDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,19 +206,47 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Styles\DrawerListItemStyles.xaml">
+    <Page Include="Resources\Styles\DrawerListItemStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Colors\DarkThemeColors.xaml">
+    <Page Include="Resources\Themes\Colors\DarkThemeColors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Colors\LightThemeColors.xaml">
+    <Page Include="Resources\Themes\Colors\LightThemeColors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SatisView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserViews\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserViews\RegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\YoneticiContent\KategorilerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\YoneticiContent\KullanicilarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\YoneticiContent\PersonellerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\YoneticiContent\UrunlerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,12 +298,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MarketDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MarketDB_log.ldf">
       <DependentUpon>MarketDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\Images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

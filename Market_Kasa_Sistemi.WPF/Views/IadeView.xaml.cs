@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Market_Kasa_Sistemi.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace Market_Kasa_Sistemi.WPF.Views
         public IadeView()
         {
             InitializeComponent();
+            DataContext = new IadeViewModel();
+            fisNoTxt.Focus();
+            dataGridIadeler.Height = Application.Current.MainWindow.ActualHeight - 420;
         }
     }
 }

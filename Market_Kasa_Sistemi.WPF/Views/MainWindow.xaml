@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:controls="clr-namespace:Market_Kasa_Sistemi.WPF.Controls"
-        xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF"
+        xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF" 
         mc:Ignorable="d"
         x:Name="mainWindow"
         Title="MainWindow"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
         WindowState="Maximized"
         FontFamily="Roboto"
         Language="tr-TR">
@@ -30,27 +33,31 @@
                         </Grid.ColumnDefinitions>
                         <ToggleButton x:Name="ThemeModeToggle"
                                       Cursor="Hand"
+                                      Width="48"
+                                      Height="48"
                                       HorizontalAlignment="Left" 
                                       Style="{StaticResource MaterialDesignActionToggleButton}"
                                       Background="{DynamicResource OnPrimaryColor}"
                                       Foreground="{DynamicResource PrimaryColor}"
-                                      Margin="16 0"
+                                      Margin="32 16 16 16"
                                       IsChecked="False"
-                                      Content="{materialDesign:PackIcon Kind=WeatherNight}"
-                                      materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=WeatherSunny}"
+                                      Content="{materialDesign:PackIcon Kind=WeatherNight,Size=24}"
+                                      materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=WeatherSunny,Size=24}"
                                       Click="ThemeModeToggle_Click">
                         </ToggleButton>
 
                         <ToggleButton HorizontalAlignment="Right"
                                       Cursor="Hand"
+                                      Width="48"
+                                      Height="48"
                                       Grid.Column="1"
                                       Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                                       Foreground="{DynamicResource OnPrimaryColor}"
-                                      Margin="16 0"
+                                      Margin="16 16 32 16"
                                       IsChecked="{Binding ElementName=DrawerToggleButton, Path=IsChecked, Mode=TwoWay}"/>
                     </Grid>
 
-                    <StackPanel Margin="0 36"
+                    <StackPanel Margin="0 32"
                                 Grid.Row="1">
                         <TextBlock Text="{Binding Kullanici.Personel.PersonelAdSoyad}"
                                    FontWeight="Bold"
@@ -73,7 +80,7 @@
 
                     </ListView>
                     <controls:CustomButton Grid.Row="3"
-                                           Height="72"
+                                           Padding="16"
                                            HoverColor="{DynamicResource PrimaryHoverColor}"
                                            FocusedColor="{DynamicResource PrimaryFocusedColor}"
                                            VerticalAlignment="Center"
@@ -138,7 +145,8 @@
                                     Click="btnExit_Click">
                                 <materialDesign:PackIcon Kind="Close" 
                                                          Width="48"
-                                                         Height="48"/>
+                                                         Height="48"
+                                                         Foreground="{DynamicResource PrimaryColor}"/>
                             </Button>
                         </Grid>
                     </materialDesign:ColorZone>

@@ -1,0 +1,71 @@
+﻿<Window x:Class="Market_Kasa_Sistemi.WPF.Views.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Views" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Width="450"
+        Title="User"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        x:Name="userWindow">
+    <materialDesign:DialogHost>
+        <Grid Background="{DynamicResource BackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <ToggleButton x:Name="ThemeModeToggle"
+                              Width="48"
+                              Height="48"
+                                Cursor="Hand"
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Top"
+                                Style="{StaticResource MaterialDesignActionToggleButton}"
+                                Background="{DynamicResource PrimaryColor}"
+                                Foreground="{DynamicResource OnPrimaryColor}"
+                                Margin="32 32 0 0"
+                                IsChecked="False"
+                                Content="{materialDesign:PackIcon Kind=WeatherNight,Size=24}"
+                                materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=WeatherSunny,Size=24}"
+                                Click="ThemeModeToggle_Click">
+                </ToggleButton>
+                <Image Source="/Resources/Images/Logo.png"
+                   Height="100"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   Margin="0 32"/>
+                <Button Style="{StaticResource MaterialDesignIconButton}"
+                        VerticalAlignment="Top"
+                        Margin="0 32 32 0"
+                        Grid.Column="2"
+                        Cursor="Hand"
+                        Height="48"
+                        Width="48"
+                        x:Name="btnExit"
+                        Click="btnExit_Click">
+                    <materialDesign:PackIcon Kind="Close" 
+                                             Width="48"
+                                             Height="48"
+                                             Foreground="{DynamicResource PrimaryColor}"/>
+                </Button>
+            </Grid>
+            <Frame Source="/Views/UserViews/LoginView.xaml"
+               Grid.Row="1" 
+               Margin="32"
+               NavigationUIVisibility="Hidden"
+               VerticalAlignment="Center"
+               x:Name="frmUser"/>
+        </Grid>
+    </materialDesign:DialogHost>
+</Window>

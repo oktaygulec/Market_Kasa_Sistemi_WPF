@@ -2,7 +2,9 @@
 using Market_Kasa_Sistemi.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Market_Kasa_Sistemi.DatabaseAccessLayer.Repositories
 {
@@ -10,43 +12,51 @@ namespace Market_Kasa_Sistemi.DatabaseAccessLayer.Repositories
     {
         public VergiRepository(DBContext context) : base(context) { }
 
-        public override object Add(Vergi item)
+        public override async Task<object> Add(Vergi item)
         {
             using (SqlCommand cmd = context.CreateCommand("SPVergiAdd", item.GetInsertParameters()))
             {
-                return context.ExecuteScalar(cmd);
+                return await context.ExecuteScalar(cmd);
             }
         }
 
-        public override Vergi GetItem(object value)
+        public override async Task<Vergi> GetItem(object value)
         {
             using (SqlCommand cmd = context.CreateCommand("SPVergiGetById", new SqlParameter("@VergiId", value)))
             {
-                return context.GetItem<Vergi>(cmd);
+                return await context.GetItem<Vergi>(cmd);
             }
         }
 
-        public override int Remove(Vergi item)
+        public override async Task<int> Remove(Vergi item)
         {
             using (SqlCommand cmd = context.CreateCommand("SPVergiDelete", item.GetIdParameter()))
             {
-                return context.ExecuteNonQuery(cmd);
+                return await context.ExecuteNonQuery(cmd);
             }
         }
 
-        public override List<Vergi> ToList()
+        public override async Task<List<Vergi>> ToList()
         {
             using (SqlCommand cmd = context.CreateCommand("SPVergiGetAll"))
             {
-                return context.ToList<Vergi>(cmd);
+                return await context.ToList<Vergi>(cmd);
             }
         }
 
-        public override int Update(Vergi item)
+        public override async Task<int> Update(Vergi item)
         {
             using (SqlCommand cmd = context.CreateCommand("SPVergiUpdate", item.GetUpdateParameters()))
             {
-                return context.ExecuteNonQuery(cmd);
+                return await context.ExecuteNonQuery(cmd);
+            }
+        }
+
+        public override async Task<ObservableCollection<Vergi>> ToObservableCollection()
+        {
+            using (SqlCommand cmd = context.CreateCommand("SPVergiGetAll"))
+            {
+                return await context.ToObservableCollection<Vergi>(cmd);
             }
         }
 

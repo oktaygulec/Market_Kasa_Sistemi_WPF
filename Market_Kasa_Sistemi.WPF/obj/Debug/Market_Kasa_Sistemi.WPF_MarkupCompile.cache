@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\App.xaml
-10-727892570
+23-1895147665
 22029888169
-17-1252572780
+491161174677
 17-605362782
-Styles\CustomButtonStyles.xaml;Views\BarkodOkuView.xaml;Views\IadeView.xaml;Views\MainWindow.xaml;Styles\DrawerListItemStyles.xaml;Themes\Colors\DarkThemeColors.xaml;Themes\Colors\LightThemeColors.xaml;Views\SatisView.xaml;Views\YoneticiView.xaml;Views\ZRaporuView.xaml;
+Controls\Dialogs\DeleteItemDialog.xaml;Controls\Dialogs\KategoriDialog.xaml;Controls\Dialogs\KullaniciDialog.xaml;Controls\Dialogs\PersonelDialog.xaml;Controls\Dialogs\UrunDialog.xaml;Resources\Styles\CustomButtonStyles.xaml;Views\BarkodOkuView.xaml;Controls\Dialogs\InformationDialog.xaml;Views\IadeView.xaml;Views\MainWindow.xaml;Resources\Styles\DrawerListItemStyles.xaml;Resources\Themes\Colors\DarkThemeColors.xaml;Resources\Themes\Colors\LightThemeColors.xaml;Views\SatisView.xaml;Views\UserViews\LoginView.xaml;Views\UserViews\RegisterView.xaml;Views\UserWindow.xaml;Views\YoneticiContent\KategorilerView.xaml;Views\YoneticiContent\KullanicilarView.xaml;Views\YoneticiContent\PersonellerView.xaml;Views\YoneticiContent\UrunlerView.xaml;Views\YoneticiView.xaml;Views\ZRaporuView.xaml;
 
 False
 

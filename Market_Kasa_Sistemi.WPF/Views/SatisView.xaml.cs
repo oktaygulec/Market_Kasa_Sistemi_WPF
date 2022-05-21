@@ -26,7 +26,13 @@ namespace Market_Kasa_Sistemi.WPF.Views
         {
             InitializeComponent();
             DataContext = new SatisViewModel();
-            dataGridSatislar.Height = Application.Current.MainWindow.ActualHeight - 400;
+            dataGridSatislar.Height = Application.Current.MainWindow.ActualHeight - 420;
+        }
+
+        private async void satisView_Loaded(object sender, RoutedEventArgs e)
+        {
+            urunBarkodTxt.Focus();
+            await (DataContext as SatisViewModel).GetOdemeTipler();
         }
     }
 }

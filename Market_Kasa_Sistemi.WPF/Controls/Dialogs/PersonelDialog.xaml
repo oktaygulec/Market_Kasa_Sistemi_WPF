@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Market_Kasa_Sistemi.WPF.Controls.Dialogs.PersonelDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:rules="clr-namespace:Market_Kasa_Sistemi.WPF.ValidationRules"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Controls.Dialogs"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             MinWidth="300"
+             FontFamily="Roboto"
+             Language="tr-TR"
+             x:Name="personelDialog"
+             Loaded="personelDialog_Loaded">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Personel Ekle"
+                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                   FontWeight="Bold"
+                   Margin="0 0 0 16"/>
+        <StackPanel Grid.Row="1">
+            <TextBox materialDesign:HintAssist.Hint="Personel adını giriniz" 
+                     Background="{DynamicResource SurfaceColor}"
+                     Foreground="{DynamicResource OnSurfaceColor}"
+                     BorderBrush="{DynamicResource BorderColor}"
+                     materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
+                     materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Margin="0 16"
+                     x:Name="txtPersonelAd">
+                <TextBox.Text>
+                    <Binding Path="PersonelAd" UpdateSourceTrigger="Explicit">
+                        <Binding.ValidationRules>
+                            <rules:NotEmptyValidationRule ValidatesOnTargetUpdated="False" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox materialDesign:HintAssist.Hint="Personel soyadını giriniz" 
+                     Background="{DynamicResource SurfaceColor}"
+                     Foreground="{DynamicResource OnSurfaceColor}"
+                     BorderBrush="{DynamicResource BorderColor}"
+                     materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
+                     materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Margin="0 16"
+                     x:Name="txtPersonelSoyad">
+                <TextBox.Text>
+                    <Binding Path="PersonelSoyad" UpdateSourceTrigger="Explicit">
+                        <Binding.ValidationRules>
+                            <rules:NotEmptyValidationRule ValidatesOnTargetUpdated="False" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <DatePicker materialDesign:HintAssist.Hint="Başlangıç tarihini giriniz" 
+                     Background="{DynamicResource SurfaceColor}"
+                     Foreground="{DynamicResource OnSurfaceColor}"
+                     BorderBrush="{DynamicResource BorderColor}"
+                     materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
+                     materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
+                     Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+                     Margin="0 16"
+                     x:Name="datePickerPersonelBaslangic">
+                <DatePicker.SelectedDate>
+                    <Binding Path="PersonelBaslangicTarih" UpdateSourceTrigger="Explicit">
+                        <Binding.ValidationRules>
+                            <rules:NotEmptyValidationRule ValidatesOnTargetUpdated="False" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </DatePicker.SelectedDate>
+            </DatePicker>
+            <ComboBox ItemsSource="{Binding PersonelTipler}"
+                          DisplayMemberPath="PersonelTipAd"
+                          SelectedItem="{Binding SelectedPersonelTip}"
+                          Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                          Background="{DynamicResource SurfaceColor}"
+                          Foreground="{DynamicResource OnSurfaceColor}"
+                          BorderBrush="{DynamicResource BorderColor}"
+                          materialDesign:HintAssist.Hint="Personel Tip"
+                          materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
+                          materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
+                          Width="260"
+                          Margin="0 16" 
+                      HorizontalAlignment="Left">
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Margin="0 32 0 0">
+            <Button Content="{Binding ButtonText}"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    Foreground="{DynamicResource PrimaryColor}"
+                    FontWeight="Bold"
+                    IsDefault="True"
+                    Command="{Binding OKCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:PersonelDialog}}"/>
+            <Button Content="İPTAL"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                Foreground="{DynamicResource PrimaryColor}"
+                FontWeight="Bold"
+                IsCancel="True"
+                Margin="8 0 0 0"
+                Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

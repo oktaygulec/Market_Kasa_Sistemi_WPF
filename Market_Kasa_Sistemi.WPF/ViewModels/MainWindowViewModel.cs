@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Market_Kasa_Sistemi.WPF.ViewModels
 {
@@ -28,31 +29,21 @@ namespace Market_Kasa_Sistemi.WPF.ViewModels
 
         public MainWindowViewModel()
         {
+            Kullanici = App.Kullanici;
+
             Items = new ObservableCollection<DrawerListItem>
             {
                 new DrawerListItem { Text = "SATIŞ", Icon = PackIconKind.CashRegister, Source = "/Views/SatisView.xaml" },
                 new DrawerListItem { Text = "BARKOD OKU", Icon = PackIconKind.Magnify, Source = "/Views/BarkodOkuView.xaml" },
                 new DrawerListItem { Text = "İADE ET", Icon = PackIconKind.CashReturn, Source = "/Views/IadeView.xaml" },
                 new DrawerListItem { Text = "Z RAPORU", Icon = PackIconKind.Newspaper, Source = "/Views/ZRaporuView.xaml" },
-                new DrawerListItem { Text = "YÖNETİCİ MENÜSÜ", Icon = PackIconKind.Settings, Source = "/Views/YoneticiView.xaml" },
             };
+
+            if (Kullanici.Personel.PersonelTip.PersonelTipAd == "Yönetici")
+                Items.Add(new DrawerListItem { Text = "YÖNETİCİ MENÜSÜ", Icon = PackIconKind.Settings, Source = "/Views/YoneticiView.xaml" });
+
             SelectedItem = Items[0];
 
-            // Örnek kullanıcı -- DB'den çekilecek
-            Kullanici = new Kullanici
-            {
-                Id = 1,
-                KullaniciAd = "test",
-                KullaniciSifre = "test",
-                Personel = new Personel 
-                { 
-                    Id = 1, 
-                    PersonelAd = "SAMET", 
-                    PersonelSoyad = "ÖZTÜRK", 
-                    PersonelBaslangicTarih = DateTime.Now,
-                    PersonelTip = new PersonelTip { Id = 1, PersonelTipAd = "Yönetici" },
-                }
-            };
         }
     }
 }

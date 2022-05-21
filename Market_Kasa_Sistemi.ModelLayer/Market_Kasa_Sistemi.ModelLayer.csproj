@@ -46,7 +46,8 @@
     <Compile Include="BaseModels\OdemeTip.cs" />
     <Compile Include="BaseModels\PersonelTip.cs" />
     <Compile Include="BaseModels\Vergi.cs" />
-    <Compile Include="Enums\ControlType.cs" />
+    <Compile Include="Enums\ProcessType.cs" />
+    <Compile Include="Enums\UserWindowType.cs" />
     <Compile Include="Fis.cs" />
     <Compile Include="Satis.cs" />
     <Compile Include="Kullanici.cs" />

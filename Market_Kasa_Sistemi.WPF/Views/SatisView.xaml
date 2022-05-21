@@ -3,16 +3,20 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:controls="clr-namespace:Market_Kasa_Sistemi.WPF.Controls"
+      xmlns:converters="clr-namespace:Market_Kasa_Sistemi.WPF.Converters"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Views" 
-      xmlns:controls="clr-namespace:Market_Kasa_Sistemi.WPF.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       x:Name="satisView"
-      Title="SatisView"
+      Title="Satış"
       FontFamily="Roboto"
-      Language="tr-TR">
-
+      Language="tr-TR"
+      Loaded="satisView_Loaded">
+    <Page.Resources>
+        <converters:ItemsCountToBoolConverter x:Key="itemsCountToBoolConverter" />
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -21,31 +25,42 @@
         </Grid.RowDefinitions>
         <Grid Margin="0 16">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <controls:CustomButton Background="{DynamicResource PrimaryColor}"
-                                   HoverColor="{DynamicResource PrimaryHoverColor}"
-                                   FocusedColor="{DynamicResource PrimaryFocusedColor}"
-                                   Padding="32 16"
-                                   CornerRadius="6">
-                <TextBlock Text="ÜRÜN SEÇ"
-                           Style="{StaticResource MaterialDesignHeadline5TextBlock}"
-                           VerticalAlignment="Center"
-                           FontWeight="Bold"
-                           Foreground="{DynamicResource OnPrimaryColor}"/>
-            </controls:CustomButton>
-            <TextBox Grid.Column="2"
-                     Width="200"
-                     Background="{DynamicResource SurfaceColor}"
-                     Foreground="{DynamicResource OnSurfaceColor}"
-                     BorderBrush="{DynamicResource OnSurfaceColor}"
-                     materialDesign:HintAssist.Hint="Ürün barkodu girişi"
-                     materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
-                     materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
-                     VerticalAlignment="Center"
-                     Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1">
+                <ComboBox ItemsSource="{Binding OdemeTipler}"
+                          DisplayMemberPath="OdemeTipAd"
+                          SelectedItem="{Binding SelectedOdemeTip}"
+                          Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                          Background="{DynamicResource SurfaceColor}"
+                          Foreground="{DynamicResource OnSurfaceColor}"
+                          BorderBrush="{DynamicResource BorderColor}"
+                          materialDesign:HintAssist.Hint="Ödeme Tipi"
+                          materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
+                          materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
+                          Width="200"
+                          Margin="0 0 16 0">
+                </ComboBox>
+                <TextBox Width="200"
+                         Background="{DynamicResource SurfaceColor}"
+                         Foreground="{DynamicResource OnSurfaceColor}"
+                         BorderBrush="{DynamicResource BorderColor}"
+                         materialDesign:HintAssist.Hint="Ürün barkodu girişi"
+                         materialDesign:HintAssist.Foreground="{DynamicResource OnSurfaceColor}"
+                         materialDesign:HintAssist.Background="{DynamicResource SurfaceColor}"
+                         VerticalAlignment="Center"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         x:Name="urunBarkodTxt">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter" 
+                                Command="{Binding AddUrunCommand}" 
+                                CommandParameter="{Binding ElementName=urunBarkodTxt}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
+            </StackPanel>
         </Grid>
         <DataGrid ItemsSource="{Binding Items}"
                   Grid.Row="1"
@@ -59,7 +74,7 @@
                   ScrollViewer.CanContentScroll="True" 
                   x:Name="dataGridSatislar">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}"
+                <DataGridTextColumn Binding="{Binding Satis.UrunBarkod}"
                                     ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                     IsReadOnly="True"
@@ -71,7 +86,7 @@
                                    Foreground="{DynamicResource OnBackgroundColor}"/>
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
-                <DataGridTextColumn Binding="{Binding UrunAd}"
+                <DataGridTextColumn Binding="{Binding Satis.Urun.UrunAd}"
                                     ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                     IsReadOnly="True"
@@ -83,11 +98,23 @@
                                    Foreground="{DynamicResource OnBackgroundColor}"/>
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
-                <DataGridTextColumn Binding="{Binding UrunStokAdet}"
+                <DataGridTextColumn Binding="{Binding Satis.Urun.Kategori.KategoriAd}"
                                     ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                     IsReadOnly="True"
                                     Width="*">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="KATEGORİ" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding UrunAdet}"
+                                    ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    IsReadOnly="True"
+                                    Width="auto">
                     <DataGridTextColumn.Header>
                         <TextBlock Text="ADET" 
                                    Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
@@ -95,7 +122,7 @@
                                    Foreground="{DynamicResource OnBackgroundColor}"/>
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
-                <DataGridTextColumn Binding="{Binding UrunFiyat, StringFormat=C2}"
+                <DataGridTextColumn Binding="{Binding Satis.Urun.KdvliUrunFiyat, StringFormat=C2}"
                                     ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                     IsReadOnly="True"
@@ -107,8 +134,32 @@
                                    Foreground="{DynamicResource OnBackgroundColor}"/>
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Satis.Urun.Vergi.VergiMiktar}"
+                                    ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    IsReadOnly="True"
+                                    Width="auto">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="VERGİ" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding ToplamFiyat, StringFormat=C2}"
+                                    ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    IsReadOnly="True"
+                                    Width="*">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="TOPLAM FİYAT" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
                 <DataGridTemplateColumn IsReadOnly="True"
-                                        Width="auto">
+                                        Width="*">
                     <DataGridTemplateColumn.Header>
                         <TextBlock Text="İŞLEMLER" 
                                    Style="{StaticResource MaterialDesignHeadline5TextBlock}"
@@ -160,18 +211,78 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="2"
-                    Orientation="Horizontal">
-            <TextBlock Text="Toplam Tutar:" 
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Toplam Tutar:" 
                        Style="{StaticResource MaterialDesignHeadline5TextBlock}"
                        Foreground="{DynamicResource OnBackgroundColor}"
-                       Margin="0 0 8 0"/>
-            <TextBlock Text="{Binding ToplamTutar, StringFormat=C2}" 
+                       Margin="0 0 8 0"
+                       VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding ToplamTutar, StringFormat=C2}" 
                        Style="{StaticResource MaterialDesignHeadline5TextBlock}"
                        Foreground="{DynamicResource OnBackgroundColor}"
-                       FontWeight="Bold"/>
-            <Button Content="BUTTON 1"/>
-            <Button Content="BUTTON 2" />
-        </StackPanel>
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1">
+                <controls:CustomButton Background="{DynamicResource ErrorColor}"
+                                       HoverColor="{DynamicResource ErrorHoverColor}"
+                                       FocusedColor="{DynamicResource ErrorFocusedColor}"
+                                       Padding="32"
+                                       Margin="16 16 0 16"
+                                       IsEnabled="{Binding Items.Count, Converter={StaticResource itemsCountToBoolConverter}}"
+                                       Command="{Binding ResetCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Kind="CloseBold" 
+                                                 VerticalAlignment="Center"
+                                                 Foreground="{DynamicResource OnErrorColor}"
+                                                 Width="36"
+                                                 Height="36"
+                                                 Margin="0 0 8 0"/>
+                        <TextBlock Text="SIFIRLA"
+                                   Grid.Column="1"
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   VerticalAlignment="Center"
+                                   FontWeight="Bold" 
+                                   Foreground="{DynamicResource OnErrorColor}"/>
+                    </Grid>
+                </controls:CustomButton>
+                <controls:CustomButton Background="{DynamicResource SuccessColor}"
+                                       HoverColor="{DynamicResource SuccessHoverColor}"
+                                       FocusedColor="{DynamicResource SuccessFocusedColor}"
+                                       Padding="32"
+                                       Margin="16 16 0 16"
+                                       IsEnabled="{Binding Items.Count, Converter={StaticResource itemsCountToBoolConverter}}"
+                                       Command="{Binding MakeSaleCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Kind="DoneAll" 
+                                             VerticalAlignment="Center"
+                                             Foreground="{DynamicResource OnSuccessColor}"
+                                             Width="36"
+                                             Height="36"
+                                             Margin="0 0 8 0"/>
+                        <TextBlock Text="SATIŞ YAP"
+                               Grid.Column="1"
+                               Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                               VerticalAlignment="Center"
+                               FontWeight="Bold" 
+                               Foreground="{DynamicResource OnSuccessColor}"/>
+                    </Grid>
+                </controls:CustomButton>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

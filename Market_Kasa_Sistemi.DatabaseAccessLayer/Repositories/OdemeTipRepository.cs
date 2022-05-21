@@ -2,7 +2,9 @@
 using Market_Kasa_Sistemi.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Market_Kasa_Sistemi.DatabaseAccessLayer.Repositories
 {
@@ -10,43 +12,51 @@ namespace Market_Kasa_Sistemi.DatabaseAccessLayer.Repositories
     {
         public OdemeTipRepository(DBContext context) : base(context) { }
 
-        public override object Add(OdemeTip item)
+        public override async Task<object> Add(OdemeTip item)
         {
             using (SqlCommand cmd = context.CreateCommand("SPOdemeTipAdd", item.GetInsertParameters()))
             {
-                return context.ExecuteScalar(cmd);
+                return await context.ExecuteScalar(cmd);
             }
         }
 
-        public override OdemeTip GetItem(object value)
+        public override async Task<OdemeTip> GetItem(object value)
         {
             using (SqlCommand cmd = context.CreateCommand("SPOdemeTipGetById", new SqlParameter("@OdemeTipId", value)))
             {
-                return context.GetItem<OdemeTip>(cmd);
+                return await context.GetItem<OdemeTip>(cmd);
             }
         }
 
-        public override int Remove(OdemeTip item)
+        public override async Task<int> Remove(OdemeTip item)
         {
             using (SqlCommand cmd = context.CreateCommand("SPOdemeTipDelete", item.GetIdParameter()))
             {
-                return context.ExecuteNonQuery(cmd);
+                return await context.ExecuteNonQuery(cmd);
             }
         }
 
-        public override List<OdemeTip> ToList()
+        public override async Task<List<OdemeTip>> ToList()
         {
             using (SqlCommand cmd = context.CreateCommand("SPOdemeTipGetAll"))
             {
-                return context.ToList<OdemeTip>(cmd);
+                return await context.ToList<OdemeTip>(cmd);
             }
         }
 
-        public override int Update(OdemeTip item)
+        public override async Task<int> Update(OdemeTip item)
         {
             using (SqlCommand cmd = context.CreateCommand("SPOdemeTipUpdate", item.GetUpdateParameters()))
             {
-                return context.ExecuteNonQuery(cmd);
+                return await context.ExecuteNonQuery(cmd);
+            }
+        }
+
+        public override async Task<ObservableCollection<OdemeTip>> ToObservableCollection()
+        {
+            using (SqlCommand cmd = context.CreateCommand("SPOdemeTipGetAll"))
+            {
+                return await context.ToObservableCollection<OdemeTip>(cmd);
             }
         }
 

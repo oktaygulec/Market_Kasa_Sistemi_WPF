@@ -1,11 +1,23 @@
 ﻿
 FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\App.xaml;;
-FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Styles\CustomButtonStyles.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Controls\Dialogs\DeleteItemDialog.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Controls\Dialogs\KategoriDialog.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Controls\Dialogs\KullaniciDialog.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Controls\Dialogs\PersonelDialog.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Controls\Dialogs\UrunDialog.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Resources\Styles\CustomButtonStyles.xaml;;
 FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\BarkodOkuView.xaml;;
 FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\IadeView.xaml;;
 FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\MainWindow.xaml;;
-FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Styles\DrawerListItemStyles.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Resources\Styles\DrawerListItemStyles.xaml;;
 FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\SatisView.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\UserViews\LoginView.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\UserViews\RegisterView.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\UserWindow.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\YoneticiContent\KategorilerView.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\YoneticiContent\KullanicilarView.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\YoneticiContent\PersonellerView.xaml;;
+FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\YoneticiContent\UrunlerView.xaml;;
 FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\YoneticiView.xaml;;
 FC:\Users\Miyajinco\Desktop\Gölyaka MYO\4. Dönem\Görsel Programlama\Proje\GorselProgramlamaProje\Market_Kasa_Sistemi.WPF\Views\ZRaporuView.xaml;;
 

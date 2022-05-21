@@ -1,15 +1,139 @@
 ﻿<Page x:Class="Market_Kasa_Sistemi.WPF.Views.ZRaporuView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Views"
+      xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF.Views" 
+      xmlns:controls="clr-namespace:Market_Kasa_Sistemi.WPF.Controls" 
+      xmlns:converters="clr-namespace:Market_Kasa_Sistemi.WPF.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ZRaporuView">
+      Title="Z Raporu"
+      x:Name="zRaporuView"
+      FontFamily="Roboto"
+      Language="tr-TR"
+      Loaded="zRaporuView_Loaded">
 
-    <StackPanel HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-        <TextBlock Text="Z RAPORU" FontSize="48"/>
-    </StackPanel>
+    <Page.Resources>
+        <converters:ItemsCountToBoolConverter x:Key="itemsCountToBoolConverter" />
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"
+                     Value="0"
+                     Foreground="{DynamicResource PrimaryColor}"
+                     Width="150"
+                     Height="150"
+                     IsIndeterminate="True" 
+                     x:Name="spinner"/>
+            <DataGrid ItemsSource="{Binding Items}"
+                  CanUserAddRows="False"
+                  AutoGenerateColumns="False"
+                  CanUserDeleteRows="False"
+                  SelectionUnit="FullRow"
+                  SelectionMode="Extended"
+                  Background="{DynamicResource SurfaceColor}"
+                  Foreground="{DynamicResource OnSurfaceColor}"
+                  ScrollViewer.CanContentScroll="True" 
+                  x:Name="dataGridFisler">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding FisId}" 
+                                    Width="*" 
+                                    ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="FİŞ NO" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding FisTarih}" 
+                                    Width="*" 
+                                    ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="FİŞ TARİH" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding OdemeTipAd}" 
+                                    Width="*" 
+                                    ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="ÖDEME TİP" 
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding ToplamFiyat, StringFormat=C2}" 
+                                    Width="*" 
+                                    ElementStyle="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <TextBlock Text="TOPLAM FİYAT"
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}" 
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnBackgroundColor}"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="1"
+              Margin="0 16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Toplam Tutar:" 
+                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                       Foreground="{DynamicResource OnBackgroundColor}"
+                       Margin="0 0 8 0"
+                       VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding ToplamTutar, StringFormat=C2}" 
+                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                       Foreground="{DynamicResource OnBackgroundColor}"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1"
+                        VerticalAlignment="Center">
+                <controls:CustomButton Background="{DynamicResource SecondaryColor}"
+                                       HoverColor="{DynamicResource SecondaryHoverColor}"
+                                       FocusedColor="{DynamicResource SecondaryFocusedColor}"
+                                       Padding="32"
+                                       IsEnabled="{Binding Items.Count, Converter={StaticResource itemsCountToBoolConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Printer"
+                                                 Width="36"
+                                                 Height="36" 
+                                                 Foreground="{DynamicResource OnSecondaryColor}"
+                                                 VerticalAlignment="Center"
+                                                 Margin="0 0 8 0"/>
+                        <TextBlock Text="RAPOR YAZDIR"
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource OnSecondaryColor}"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </controls:CustomButton>
+            </StackPanel>
+        </Grid>
+    </Grid>
 </Page>

@@ -1,16 +1,16 @@
 ﻿<Application x:Class="Market_Kasa_Sistemi.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF"
-             StartupUri="Views/MainWindow.xaml">
+             xmlns:local="clr-namespace:Market_Kasa_Sistemi.WPF" 
+             Startup="Application_Startup">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="/Themes/Colors/LightThemeColors.xaml" />
-                <ResourceDictionary Source="/Styles/DrawerListItemStyles.xaml" />
-                <ResourceDictionary Source="/Styles/CustomButtonStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Themes/Colors/LightThemeColors.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/DrawerListItemStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/CustomButtonStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
