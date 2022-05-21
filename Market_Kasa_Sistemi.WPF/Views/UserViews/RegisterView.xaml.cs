@@ -25,6 +25,7 @@ namespace Market_Kasa_Sistemi.WPF.Views.UserViews
         {
             InitializeComponent();
             DataContext = new RegisterViewModel();
+            txtKullaniciAd.Focus();
         }
 
         private async void registerView_Loaded(object sender, RoutedEventArgs e)
